@@ -17,9 +17,10 @@
       <script>
         function initMap() {
           var victoria = {lat: 48.4267351, lng: -123.3759258};
+		  var minZoomLevel = 13;
           var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 14,
-            center: victoria,
+            zoom: minZoomLevel,
+			center: new google.maps.LatLng(48.462774, -123.313076),//this is where we center on startup
 			styles: [
     			{
    					featureType: "poi",
@@ -44,6 +45,35 @@
     		map: map,
     		title: 'test'
  		 });
+			var strictBounds = new google.maps.LatLngBounds(
+			new google.maps.LatLng(48.452511, -123.349477),
+			new google.maps.LatLng(48.482620, -123.303400));
+ 
+
+			 // Listen for the dragend event
+ 			google.maps.event.addListener(map, 'dragend', function () {
+				 if (strictBounds.contains(map.getCenter())) return;
+
+				 var c = map.getCenter(),
+					 x = c.lng(),
+					 y = c.lat(),
+					 maxX = strictBounds.getNorthEast().lng(),
+					 maxY = strictBounds.getNorthEast().lat(),
+					 minX = strictBounds.getSouthWest().lng(),
+					 minY = strictBounds.getSouthWest().lat();
+
+				 if (x < minX) x = minX;
+				 if (x > maxX) x = maxX;
+				 if (y < minY) y = minY;
+				 if (y > maxY) y = maxY;
+
+			 	 map.setCenter(new google.maps.LatLng(y, x));
+			 });
+
+			 // Limit the zoom level
+			 google.maps.event.addListener(map, 'zoom_changed', function () {
+				 if (map.getZoom() < minZoomLevel) map.setZoom(minZoomLevel);
+			 });
         }
       </script>
 
