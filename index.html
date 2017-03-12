@@ -21,6 +21,7 @@
           var map = new google.maps.Map(document.getElementById('map'), {
             zoom: minZoomLevel,
 			center: new google.maps.LatLng(48.462774, -123.313076),//this is where we center on startup
+			//48.476044, -123.317373   add 0.01327   add 0.004297
 			styles: [
     			{
    					featureType: "poi",
@@ -46,8 +47,8 @@
     		title: 'test'
  		 });
 			var strictBounds = new google.maps.LatLngBounds(
-			new google.maps.LatLng(48.352511, -123.349477),
-			new google.maps.LatLng(48.382620, -123.303400));
+			new google.maps.LatLng(48.392511, -123.349477),
+			new google.maps.LatLng(48.472620, -123.303400));
  
 
 			 // Listen for the dragend event
