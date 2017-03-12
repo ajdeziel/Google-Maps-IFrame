@@ -20,12 +20,12 @@
 		  left: 0%;
 		  z-index: 99;
 		  background-color: #fff;
-		  padding: 0px;
+		  padding: 25px;
 		  border: 0px solid #999;
 		  text-align: center;
 		  font-family: 'Roboto','sans-serif';
-		  line-height: 1px;
-		  padding-left: 0px;
+		  line-height: 18px;
+		  padding-left: 10px;
 		}
     </style>
   </head>
@@ -61,15 +61,16 @@
           });
 		
 		var marker = new google.maps.Marker({
-    		position: victoria,
+    		position: spot,
 			icon: 'ICONS/cafeG.png',
     		map: map,
     		title: 'test',
 			image: 'IMAGES/one.png'
  		 });
+		
 		google.maps.event.addListener(marker, 'click',function(){
 			var pic = marker.image;
-			console.log("pass3");
+			console.log("pass4");
 			showInContentWindow(pic);
 			
 		});
