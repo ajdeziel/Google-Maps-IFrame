@@ -17,7 +17,7 @@
       <script>
         function initMap() {
           var victoria = {lat: 48.4267351, lng: -123.3759258};
-		  var minZoomLevel = 13;
+		  var minZoomLevel = 15;
           var map = new google.maps.Map(document.getElementById('map'), {
             zoom: minZoomLevel,
 			center: new google.maps.LatLng(48.462774, -123.313076),//this is where we center on startup
@@ -47,8 +47,8 @@
     		title: 'test'
  		 });
 			var strictBounds = new google.maps.LatLngBounds(
-			new google.maps.LatLng(48.422511, -123.349477),
-			new google.maps.LatLng(48.482620, -123.303400));
+			new google.maps.LatLng(48.432511, -123.339477),
+			new google.maps.LatLng(48.472620, -123.303400));
  
 
 			 // Listen for the dragend event
