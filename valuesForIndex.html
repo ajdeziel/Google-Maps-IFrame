@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+
+    <style>
+      #map {
+        height: 1400px;
+        width: 100%;
+       }
+    </style>
+  </head>
+
+  <body>
+    <div id="map"></div>
+      <script>
+        function initMap() {
+          var victoria = {lat: 48.463131, lng: -123.312527};
+		  var minZoomLevel = 15	;
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: minZoomLevel,
+			center: new google.maps.LatLng(48.463131, -123.312527),//this is where we center on startup
+			//48.476044, -123.317373   add 0.01327   add 0.004297
+			styles: [
+    			{
+   					featureType: "poi",
+       				elementType: "labels",
+        			stylers: [
+             	 		{ visibility: "off" }
+        			]
+    		 
+     			},{
+   		 			featureType: "transit",
+       			 	elementType: "labels",
+        			stylers: [
+              			{ visibility: "off" }
+        			]
+    		 
+     			}
+    		]		
+          });
+          
+		var location = {lat: 48.460063, lng: -123.333190};
+		var marker = new google.maps.Marker({
+    		position: location,
+			icon: 'ICONS/cafeG.png',
+    		map: map,
+    		title: 'The Urban Cup Cafe'
+ 		 });		 
+ 		
+ 		location = {lat: 48.445119, lng: -123.333733};
+		var marker2 = new google.maps.Marker({
+    		position: location,
+			icon: 'ICONS/hospR.png',
+    		map: map,
+    		title: 'Lansdowne Walk In Clinic'
+ 		 });
+ 		 
+ 		 location = {lat: 48.445276, lng: -123.337381};
+ 		 var marker3 = new google.maps.Marker({
+    		position: location,
+			icon: 'ICONS/shopY.png',
+    		map: map,
+    		title: 'Canadian Tire'
+ 		 });
+ 		
+ 		 location = {lat: 48.444934, lng: -123.329903};
+ 		 var marker4 = new google.maps.Marker({
+    		position: location,
+			icon: 'ICONS/parkG.png',
+    		map: map,
+    		title: 'Lansdowne Park'
+ 		 });
+ 		 
+ 		 location = {lat: 48.466092, lng: -123.307445};
+ 		 var marker5 = new google.maps.Marker({
+    		position: location,
+			icon: 'ICONS/foodG.png',
+    		map: map,
+    		title: 'Grad House Restaurant'
+ 		 });
+
+ 		 location = {lat: 48.468830, lng: -123.330704};
+ 		 var marker6 = new google.maps.Marker({
+    		position: location,
+			icon: 'ICONS/foodR.png',
+    		map: map,
+    		title: 'Original Joes'
+ 		 });
+ 		 
+ 		 location = {lat: 48.461581, lng: -123.331795};
+ 		 var marker7 = new google.maps.Marker({
+    		position: location,
+			icon: 'ICONS/foodO.png',
+    		map: map,
+    		title: 'Phonomenal Vietnamese Cafe'
+ 		 });
+ 		 
+ 		 location = {lat: 48.469904, lng: -123.333853};
+ 		 var marker8 = new google.maps.Marker({
+    		position: location,
+			icon: 'ICONS/gymG.png',
+    		map: map,
+    		title: 'VI Fitness'
+ 		 });
+ 		 
+ 		 location = {lat: 48.468958, lng: -123.331564};
+ 		 var marker9 = new google.maps.Marker({
+    		position: location,
+			icon: 'ICONS/shopY.png',
+    		map: map,
+    		title: 'Thrifty Foods'
+ 		 });
+ 		 
+		location = {lat: 48.467935, lng: -123.310946};
+ 		 var marker10 = new google.maps.Marker({
+    		position: location,
+			icon: 'ICONS/gymR.png',
+    		map: map,
+    		title: 'CARSA'
+ 		 });
+ 		 
+ 		 location = {lat: 48.454773, lng: -123.344983};
+ 		 var marker11 = new google.maps.Marker({
+    		position: location,
+			icon: 'ICONS/parkY.png',
+    		map: map,
+    		title: 'Cedar Hill Golf Course'
+ 		 });
+ 		 
+ 		 location = {lat: 48.459398, lng: -123.333299};
+ 		 var marker12 = new google.maps.Marker({
+    		position: location,
+			icon: 'ICONS/shopR.png',
+    		map: map,
+    		title: 'fujiya'
+ 		 });
+ 		 
+ 		 location = {lat: 48.464581, lng: -123.307928};
+ 		 var marker13 = new google.maps.Marker({
+    		position: location,
+			icon: 'ICONS/foodG.png',
+    		map: map,
+    		title: 'Felicitas Pub'
+ 		 });
+ 		 
+ 		 location = {lat: 48.461508, lng: -123.297376};
+ 		 var marker14 = new google.maps.Marker({
+    		position: location,
+			icon: 'ICONS/foodO.png',
+    		map: map,
+    		title: 'Thai Lemongrass Restaurant'
+ 		 });
+ 		 
+ 		 location = {lat: 48.460960, lng: -123.296968};
+ 		 var marker15 = new google.maps.Marker({
+    		position: location,
+			icon: 'ICONS/shopG.png',
+    		map: map,
+    		title: 'Peppers Grocery'
+ 		 });
+ 
+ 		 location = {lat: 48.477577, lng: -123.333172};
+ 		 var marker16 = new google.maps.Marker({
+    		position: location,
+			icon: 'ICONS/shopY.png',
+    		map: map,
+    		title: 'Mt Douglas Food Market'
+ 		 });
+ 		 
+ 		 location = {lat: 48.478217, lng: -123.327893};
+ 		 var marker17 = new google.maps.Marker({
+    		position: location,
+			icon: 'ICONS/parkR.png',
+    		map: map,
+    		title: 'Lambrick Park'
+ 		 });
+ 		 
+ 		 location = {lat: 48.478146, lng: -123.330275};
+ 		 var marker18 = new google.maps.Marker({
+    		position: location,
+			icon: 'ICONS/gymO.png',
+    		map: map,
+    		title: 'Gordon Head Recreation Centre'
+ 		 });
+ 		 
+ 		 location = {lat: 48.476645, lng: -123.332828};
+ 		 var marker19 = new google.maps.Marker({
+    		position: location,
+			icon: 'ICONS/cafeY.png',
+    		map: map,
+    		title: 'Starbucks'
+ 		 });
+ 		 
+ 		 location = {lat: 48.457776, lng: -123.332780};
+ 		 var marker20 = new google.maps.Marker({
+    		position: location,
+			icon: 'ICONS/hospG.png',
+    		map: map,
+    		title: 'Saanich Walk-in Denture Clinic'
+ 		 });
+ 		 
+ 		 location = {lat: 48.463432, lng: -123.309895};
+ 		 var marker21 = new google.maps.Marker({
+    		position: location,
+			icon: 'ICONS/cafeR.png',
+    		map: map,
+    		title: 'Biblio Cafe'
+ 		 });
+
+ 		 location = {lat: 48.468107, lng: -123.333300};
+ 		 var marker22 = new google.maps.Marker({
+    		position: location,
+			icon: 'ICONS/hospO.png',
+    		map: map,
+    		title: 'Gordon Head Treatment Centre'
+ 		 });
+ 		 
+			var strictBounds = new google.maps.LatLngBounds(
+			new google.maps.LatLng(48.432511, -123.339477),
+			new google.maps.LatLng(48.472620, -123.303400));
+ 
+
+			 // Listen for the dragend event
+ 			google.maps.event.addListener(map, 'dragend', function () {
+				 if (strictBounds.contains(map.getCenter())) return;
+
+				 var c = map.getCenter(),
+					 x = c.lng(),
+					 y = c.lat(),
+					 maxX = strictBounds.getNorthEast().lng(),
+					 maxY = strictBounds.getNorthEast().lat(),
+					 minX = strictBounds.getSouthWest().lng(),
+					 minY = strictBounds.getSouthWest().lat();
+
+				 if (x < minX) x = minX;
+				 if (x > maxX) x = maxX;
+				 if (y < minY) y = minY;
+				 if (y > maxY) y = maxY;
+
+			 	 map.setCenter(new google.maps.LatLng(y, x));
+			 });
+
+			 // Limit the zoom level
+			 google.maps.event.addListener(map, 'zoom_changed', function () {
+				 if (map.getZoom() < minZoomLevel) map.setZoom(minZoomLevel);
+			 });
+        }
+      </script>
+
+      <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDV1MhOhCENuMr_zaic5Iz4amK3I6GBXt0&callback=initMap">
+      </script>
+    </body>
+</html>

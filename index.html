@@ -34,6 +34,8 @@
     <div id="map"></div>
 	  <div id="content-window"></div>
       <script>
+		
+		  
         function initMap() {
           var victoria = {lat: 48.463131, lng: -123.312527};
 		  var minZoomLevel = 15	;
@@ -60,28 +62,199 @@
     		]		
           });
 		
-		var marker = new google.maps.Marker({
-    		position: victoria,
-			icon: 'ICONS/cafeG.png',
-    		map: map,
-    		title: 'test',
-			image: 'IMAGES/newOne.png'
- 		 });
 		
-		google.maps.event.addListener(marker, 'click',function(){
-			var pic = this.image;
-			console.log("pass4");
-			showInContentWindow(pic);
-			
-		});
-		function showInContentWindow(pic){
-			var graphicBar = document.getElementById('content-window');
-			graphicBar.innerHTML = "<img src="+pic+">";
-		}
 		google.maps.event.addListener(map, 'dblclick', function () {
 			var graphicBar = document.getElementById('content-window');
 			graphicBar.innerHTML = "";
 		});
+		var markers = [
+			
+				{
+					"lat" : '48.460063',
+					"lng" : '-123.333190',
+					"icon" : 'ICONS/cafeG.png',
+					"image" : 'IMAGES/G.png',
+					"title" : 'The Urban Cup Cafe'
+				},
+				{
+					"lat" : '48.445119',
+					"lng" : '-123.333733',
+					"icon" : 'ICONS/hospR.png',
+					"image" : 'IMAGES/R.png',
+					"title" : 'Lansdowne Walk In Clinic'
+				},
+				{
+					"lat" : '48.445276',
+					"lng" : '-123.337381',
+					"icon" : 'ICONS/shopO.png',
+					"image" : 'IMAGES/O.png',
+					"title" : 'Canadian Tire'
+				},
+				{
+					"lat" : '48.444934',
+					"lng" : '-123.329903',
+					"icon" : 'ICONS/parkG.png',
+					"image" : 'IMAGES/G.png',
+					"title" : 'Lansdowne Park'
+				},
+				{
+					"lat" : '48.466092',
+					"lng" : '-123.307445',
+					"icon" : 'ICONS/foodG.png',
+					"image" : 'IMAGES/G.png',
+					"title" : 'Grad House Restaurant'
+				},
+				{
+					"lat" : '48.468830',
+					"lng" : '-123.330704',
+					"icon" : 'ICONS/foodR.png',
+					"image" : 'IMAGES/R.png',
+					"title" : 'Original Joes'
+				},
+				{
+					"lat" : '48.461581',
+					"lng" : '-123.331795',
+					"icon" : 'ICONS/foodO.png',
+					"image" : 'IMAGES/O.png',
+					"title" : 'Phonomenal Vietnamese Cafe'
+				},
+				{
+					"lat" : '48.469904',
+					"lng" : '-123.333853',
+					"icon" : 'ICONS/gymG.png',
+					"image" : 'IMAGES/G.png',
+					"title" : 'VI Fitness'
+				},
+				{
+					"lat" : '48.468958',
+					"lng" : '-123.331564',
+					"icon" : 'ICONS/shopO.png',
+					"image" : 'IMAGES/O.png',
+					"title" : 'Thrifty Foods'
+				},
+				{
+					"lat" : '48.467935',
+					"lng" : '-123.310946',
+					"icon" : 'ICONS/gymR.png',
+					"image" : 'IMAGES/R.png',
+					"title" : 'CARSA'
+				},
+				{
+					"lat" : '48.454773',
+					"lng" : '-123.344983',
+					"icon" : 'ICONS/parkO.png',
+					"image" : 'IMAGES/O.png',
+					"title" : 'Cedar Hill Golf Course'
+				},
+				{
+					"lat" : '48.459398',
+					"lng" : '-123.333299',
+					"icon" : 'ICONS/shopR.png',
+					"image" : 'IMAGES/R.png',
+					"title" : 'fujiya'
+				},
+				{
+					"lat" : '48.464581',
+					"lng" : '-123.307928',
+					"icon" : 'ICONS/foodG.png',
+					"image" : 'IMAGES/G.png',
+					"title" : 'Felicitas Pub'
+				},
+				{
+					"lat" : '48.461508',
+					"lng" : '-123.297376',
+					"icon" : 'ICONS/foodO.png',
+					"image" : 'IMAGES/O.png',
+					"title" : 'Thai Lemongrass Restaurant'
+				},
+				{
+					"lat" : '48.460960',
+					"lng" : '-123.296968',
+					"icon" : 'ICONS/shopG.png',
+					"image" : 'IMAGES/G.png',
+					"title" : 'Peppers Grocery'
+				},
+				{
+					"lat" : '48.477577',
+					"lng" : '-123.333172',
+					"icon" : 'ICONS/shopO.png',
+					"image" : 'IMAGES/O.png',
+					"title" : 'Mt Douglas Food Market'
+				},
+				{
+					"lat" : '48.478217',
+					"lng" : '-123.327893',
+					"icon" : 'ICONS/parkR.png',
+					"image" : 'IMAGES/R.png',
+					"title" : 'Lambrick Park'
+				},
+				{
+					"lat" : '48.478146',
+					"lng" : '-123.330275',
+					"icon" : 'ICONS/gymO.png',
+					"image" : 'IMAGES/O.png',
+					"title" : 'Gordon Head Recreation Centre'
+				},
+				{
+					"lat" : '48.476645',
+					"lng" : '-123.332828',
+					"icon" : 'ICONS/cafeO.png',
+					"image" : 'IMAGES/O.png',
+					"title" : 'Starbucks'
+				},
+				{
+					"lat" : '48.457776',
+					"lng" : '-123.332780',
+					"icon" : 'ICONS/hospG.png',
+					"image" : 'IMAGES/G.png',
+					"title" : 'Saanich Walk-in Denture Clinic'
+				},
+				{
+					"lat" : '48.463432',
+					"lng" : '-123.309895',
+					"icon" : 'ICONS/cafeR.png',
+					"image" : 'IMAGES/R.png',
+					"title" : 'Biblio Cafe'
+				},
+				{
+					"lat" : '48.468107',
+					"lng" : '-123.333300',
+					"icon" : 'ICONS/hospO.png',
+					"image" : 'IMAGES/O.png',
+					"title" : 'Gordon Head Treatment Centre'
+				}
+				
+			];
+		   for (var i = 0; i < markers.length; i++) {
+            var data = markers[i];
+            var myLatlng = new google.maps.LatLng(data.lat, data.lng);
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map,
+                title: data.title,
+				image: data.image,
+				icon: data.icon
+            });
+ 
+            //Attach click event to the marker.
+            (function (marker, data) {
+                google.maps.event.addListener(marker, "click", function () {
+                    //Wrap the content inside an HTML DIV in order to set height and width of InfoWindow.
+                    var pic = this.image;
+				console.log("pass5");
+				showInContentWindow(pic);
+				});
+            })(marker, data);
+        }
+			function showInContentWindow(pic){
+			var graphicBar = document.getElementById('content-window');
+			if(graphicBar.innerHTML == "<img src=\""+pic+"\">"){
+				graphicBar.innerHTML = "";
+			}else{
+				console.log(graphicBar.innerHTML + " new:<img src="+pic+">");
+				graphicBar.innerHTML = "<img src="+pic+">";
+			}
+		}
 			
 			
 			var strictBounds = new google.maps.LatLngBounds(
