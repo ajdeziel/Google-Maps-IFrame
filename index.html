@@ -41,7 +41,6 @@
 			mapTypeControl: false,
             zoom: minZoomLevel,
 			center: new google.maps.LatLng(48.463131, -123.312527),//this is where we center on startup
-			//48.476044, -123.317373   add 0.01327   add 0.004297
 			styles: [
     			{
    					featureType: "poi",
@@ -79,7 +78,10 @@
 			var graphicBar = document.getElementById('content-window');
 			graphicBar.innerHTML = "<img src="+pic+">";
 		}
-			
+		google.maps.event.addListener(map, 'dblclick', function () {
+			var graphicBar = document.getElementById('content-window');
+			graphicBar.innerHTML = "";
+		});
 			
 			
 			var strictBounds = new google.maps.LatLngBounds(
