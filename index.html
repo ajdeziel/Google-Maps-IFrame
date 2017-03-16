@@ -239,13 +239,13 @@
             //Attach click event to the marker.
             (function (marker, data) {
                 google.maps.event.addListener(marker, "click", function () {
-                    //Wrap the content inside an HTML DIV in order to set height and width of InfoWindow.
                     var pic = this.image;
 				console.log("pass5");
+					
 				showInContentWindow(pic);
 				});
             })(marker, data);
-        }
+		}
 			function showInContentWindow(pic){
 			var graphicBar = document.getElementById('content-window');
 			if(graphicBar.innerHTML == "<img src=\""+pic+"\">"){
